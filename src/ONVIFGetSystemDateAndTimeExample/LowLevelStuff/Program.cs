@@ -46,6 +46,7 @@ namespace LowLevelStuff
                 responseBuilder.Append(Encoding.UTF8.GetString(buffer, 0, bytesRead));
 
             var response = responseBuilder.ToString();
+            Console.WriteLine(response);
             var contentLength = int.Parse(Regex.Match(response, @"Content-Length:\s+(?<length>\d+)\s+").Groups["length"].Value);
             var soapContent = response.Substring(response.Length - contentLength);
 

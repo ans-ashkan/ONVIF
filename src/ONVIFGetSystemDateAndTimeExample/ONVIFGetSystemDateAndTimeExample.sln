@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnvifApplication", "OnvifAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LowLevelStuff", "LowLevelStuff\LowLevelStuff.csproj", "{04317BE0-8585-4C92-A01D-4DB7D7D889CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LowLevelTests", "LowLevelTests\LowLevelTests.csproj", "{264DE0B0-2730-41AF-831D-174395EAE064}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{04317BE0-8585-4C92-A01D-4DB7D7D889CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04317BE0-8585-4C92-A01D-4DB7D7D889CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04317BE0-8585-4C92-A01D-4DB7D7D889CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{264DE0B0-2730-41AF-831D-174395EAE064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264DE0B0-2730-41AF-831D-174395EAE064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264DE0B0-2730-41AF-831D-174395EAE064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264DE0B0-2730-41AF-831D-174395EAE064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
