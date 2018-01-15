@@ -73,4 +73,14 @@ VMS: Video Management System
 [این برنامه](http://www.happytimesoft.com/products/multi-onvif-server/index.html)
  به این منظور استفاده کرد.
 
+### برنامه‌های نمونه
+
+در این برنامه‌ها قصد داریم یک کلاینت برای استفاده از تابع GetSystemDateAndTime از سرویس Device پیاده‌سازی کنیم.
+
+#### Simple
+
+این برنامه ساده ترین روش برای انجام این کار، یعنی اضافه کردن Service Reference به پروژه با استفاده از فایل [وب‌ سرویس](https://www.onvif.org/ver10/device/wsdl/devicemgmt.wsdl) و فراخوانی تابع از کدهای Generate شده را انجام می‌دهد.
+
+* تنظیمات Endpoint به Settings.config منتقل شده است که معمولا کنار پروژه و در گیت قرار نمی‌گیرد، اما برای راحتی کار در پروژه اضافه شده است.
+
 </div>
