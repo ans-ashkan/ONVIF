@@ -83,4 +83,13 @@ VMS: Video Management System
 
 * تنظیمات Endpoint به Settings.config منتقل شده است که معمولا کنار پروژه و در گیت قرار نمی‌گیرد، اما برای راحتی کار در پروژه اضافه شده است.
 
+#### OnvifApplication
+
+این برنامه با استفاده از دو پروژه ONVIF.Framework و ONVIF.Library تابع GetSystemDateAndTime را فراخوانی می‌کند.
+ 
+ پروژه ONVIF.Framework برای مخفی سازی پیاده سازی فراخوانی توابع و ایجاد یک ساختار منظم استفاده شده است.
+ پروژه ONVIF.Library پیاده سازی سرویس‌های ONVIF را بر عهده دارد.
+
+* تنظیمات Endpoint به Settings.config منتقل شده است که معمولا کنار پروژه و در گیت قرار نمی‌گیرد، اما برای راحتی کار در پروژه اضافه شده است.
+
 </div>
