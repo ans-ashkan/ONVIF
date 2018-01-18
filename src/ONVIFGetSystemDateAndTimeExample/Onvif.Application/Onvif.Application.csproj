@@ -58,7 +58,7 @@
       <Project>{a1e57bb1-f0b7-4b63-a13f-30de6fcae790}</Project>
       <Name>ONVIF.Framework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ONVIFLibrary\ONVIF.Library.csproj">
+    <ProjectReference Include="..\ONVIF.Library\ONVIF.Library.csproj">
       <Project>{ee32beda-d76f-459c-9247-bf3933e6c320}</Project>
       <Name>ONVIF.Library</Name>
     </ProjectReference>
