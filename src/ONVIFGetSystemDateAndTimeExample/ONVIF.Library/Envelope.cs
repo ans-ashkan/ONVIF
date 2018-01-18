@@ -24,7 +24,7 @@ namespace ONVIF.Library
         public static Envelope<TBody> Deserialize(Stream stream)
         {
             var serializer = new XmlSerializer(typeof(Envelope<TBody>), new[] { typeof(TBody) });
-            return (Envelope<TBody>)serializer.Deserialize(new GetSystemDateAndTimeAction.NamespaceIgnorantXmlTextReader(new StreamReader(stream)));
+            return (Envelope<TBody>)serializer.Deserialize(new NamespaceIgnorantXmlTextReader(new StreamReader(stream)));
         }
     }
 }

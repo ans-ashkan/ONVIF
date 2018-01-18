@@ -1,22 +1,10 @@
-﻿using System.IO;
-
-namespace ONVIF.Library.Services.Device.GetSystemDateAndTime
+﻿namespace ONVIF.Library.Services.Device.GetSystemDateAndTime
 {
-    public class GetSystemDateAndTimeAction : IAction<SystemDateAndTime>
+    public class GetSystemDateAndTimeAction : ActionBase<GetSystemDateAndTimeRequestBody, GetSystemDateAndTimeResponseBody, SystemDateAndTime>
     {
-        public SystemDateAndTime Deserialize(Stream stream)
+        protected override SystemDateAndTime GetResponse(Envelope<GetSystemDateAndTimeResponseBody> response)
         {
-            return Envelope<GetSystemDateAndTimeResponseBody>.Deserialize(stream).Body.GetSystemDateAndTimeResponse.SystemDateAndTime;
-        }
-
-        public void SerializeRequest(Stream stream)
-        {
-            var envelope = new Envelope<GetSystemDateAndTimeRequestBody>
-            {
-                Body = new GetSystemDateAndTimeRequestBody()
-            };
-
-            Envelope<GetSystemDateAndTimeRequestBody>.Serialize(envelope, stream);
+            return response.Body.GetSystemDateAndTimeResponse.SystemDateAndTime;
         }
     }
 }

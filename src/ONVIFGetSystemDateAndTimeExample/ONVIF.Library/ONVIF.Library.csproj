@@ -50,6 +50,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="Envelope.cs" />
     <Compile Include="EnvelopeBody.cs" />
+    <Compile Include="Services\Device\GetSystemDateAndTime\ActionBase.cs" />
     <Compile Include="Services\Device\GetSystemDateAndTime\Date.cs" />
     <Compile Include="Services\Device\GetSystemDateAndTime\DateTime.cs" />
     <Compile Include="Services\Device\GetSystemDateAndTime\GetSystemDateAndTime.cs" />
