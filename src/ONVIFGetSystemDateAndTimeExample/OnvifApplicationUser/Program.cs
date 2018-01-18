@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Configuration;
+using System.Threading.Tasks;
 using ONVIF.Library;
 
 namespace OnvifApplicationUser
@@ -9,12 +10,18 @@ namespace OnvifApplicationUser
     {
         static void Main(string[] args)
         {
+            AsyncMain(args).ConfigureAwait(false).GetAwaiter().GetResult();
+        }
+
+        static async Task AsyncMain(string[] args)
+        {
             try
             {
-                var clientFactory = new OnvifClientFactory(); 
+                var clientFactory = new OnvifClientFactory();
                 var baseUri = ConfigurationManager.AppSettings["BaseUri"];
                 var client = clientFactory.CreateClient(baseUri);
-                Console.WriteLine(client.DeviceService.GetSystemDateAndTimeAsync().ConfigureAwait(false).GetAwaiter().GetResult());
+                var systemDateAndTime = await client.DeviceService.GetSystemDateAndTimeAsync();
+                Console.WriteLine(systemDateAndTime);
             }
             catch (Exception e)
             {

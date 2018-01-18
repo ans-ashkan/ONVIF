@@ -50,6 +50,7 @@
     <None Include="App.config" />
     <None Include="Settings.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>

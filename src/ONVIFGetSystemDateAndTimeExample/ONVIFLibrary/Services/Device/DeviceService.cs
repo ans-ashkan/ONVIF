@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Net;
-using System.ServiceModel;
-using System.ServiceModel.Channels;
 using System.Threading;
 using System.Threading.Tasks;
 using ONVIF.Framework;
@@ -17,29 +14,13 @@ namespace ONVIF.Library.Services.Device
             _client = client;
         }
 
-        private OnvifWebService.DeviceClient GetDeviceClient()
+        public async Task<DateTime> GetSystemDateAndTimeAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var httpBinding = new HttpTransportBindingElement
-            {
-                AuthenticationScheme = AuthenticationSchemes.Digest
-            };
+            var systemDateAndTime =  await _client.ExecuteAction(new GetSystemDateAndTime.GetSystemDateAndTimeAction(), cancellationToken);
 
-            var messageElement = new TextMessageEncodingBindingElement
-            {
-                MessageVersion = MessageVersion.Soap12
-            };
-
-            return new OnvifWebService.DeviceClient(new CustomBinding(messageElement, httpBinding), new EndpointAddress(_client.BaseUri));
-        }
-
-        public async Task<DateTime> GetSystemDateAndTimeAsync(CancellationToken cancellationToken = default (CancellationToken))
-        {
-            using (var client = GetDeviceClient())
-            {
-                var dt = await client.GetSystemDateAndTimeAsync();
-                var deviceTime = new DateTime(dt.UTCDateTime.Date.Year, dt.UTCDateTime.Date.Month, dt.UTCDateTime.Date.Day, dt.UTCDateTime.Time.Hour, dt.UTCDateTime.Time.Minute, dt.UTCDateTime.Time.Second);
-                return deviceTime;
-            }
+            var date = systemDateAndTime.UTCDateTime.Date;
+            var time = systemDateAndTime.UTCDateTime.Time;
+            return new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second, DateTimeKind.Utc);
         }
     }
 }
